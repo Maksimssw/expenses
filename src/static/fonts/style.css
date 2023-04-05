@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./Mulish-Bold.woff') format('woff'),
+  url('./Mulish-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./Mulish-ExtraBold.woff') format('woff'),
+  url('./Mulish-ExtraBold.woff2') format('woff2');
+}

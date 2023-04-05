@@ -1,0 +1,61 @@
+.expenses {
+  padding-top: 30px;
+}
+
+.expenses__list {
+  display: grid;
+  grid-row-gap: 32px;
+}
+
+.expenses__item {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  grid-column-gap: 12px;
+}
+
+.expenses__close {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 58px;
+  background: var(--color-skin100);
+  border-radius: 12px;
+}
+
+.expenses__close img {
+  width: 20px;
+  height: 20px;
+}
+
+.expenses__wrapper {
+  display: grid;
+  grid-row-gap: 6px;
+}
+
+.expenses__text {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-gray1000)
+}
+
+.expenses__account {
+  line-height: 1.2;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-skin200)
+}
+
+.expenses__date {
+  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-gray100);
+}
+
+.expenses__spend {
+  line-height: 1.1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-green200)
+}
