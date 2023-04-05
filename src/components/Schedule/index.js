@@ -1,6 +1,6 @@
 import './index.css'
 
-function Schedule() {
+const Schedule = () => {
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const createCol = new Array(12)
       .fill('')

@@ -1,7 +1,7 @@
 import close from '../../static/icons/close.svg'
 import './index.css'
 
-function Expenses() {
+const Expenses = () => {
   return(
     <section className='expenses container'>
       <ul className='expenses__list'>

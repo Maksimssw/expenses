@@ -2,7 +2,7 @@ import AddExpenses from "../AddExpenses";
 import Schedule from "../Schedule";
 import Expenses from "../Expenses";
 
-function App() {
+const App = () => {
   return (
     <main>
       <AddExpenses />

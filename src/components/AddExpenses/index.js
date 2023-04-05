@@ -1,6 +1,6 @@
 import './index.css'
 
-function AddExpenses() {
+const AddExpenses = () => {
   return (
     <section className='add-expenses container'>
       <h1 className='add-expenses__headline'>Expenses</h1>
