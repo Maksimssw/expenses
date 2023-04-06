@@ -2,7 +2,7 @@ import './index.css'
 import Form from "./Form";
 import {useState} from "react";
 
-const AddExpenses = () => {
+const AddExpenses = (props) => {
   const[action, setAction] = useState(false)
 
   const toggleViewHandler = (e) => {
@@ -10,12 +10,21 @@ const AddExpenses = () => {
     setAction(!action)
   }
 
+  const saveDataHandler = (data) => {
+    const costData = {
+      ...data,
+      id: Math.random().toString()
+    }
+    props.onAddExpenses(costData)
+  }
+
   return (
     <section className='add-expenses container'>
       <h1 className='add-expenses__headline'>Expenses</h1>
       <Form
         action={action}
-        toggleViewHandler={toggleViewHandler}
+        onToggleView={toggleViewHandler}
+        onSaveData={saveDataHandler}
       />
       <div
         className={`grid-row justify-content-center ${action ? 'disabled' : ''}`}

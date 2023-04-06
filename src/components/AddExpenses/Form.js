@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 const Form = (props) => {
-  const{action, toggleViewHandler} = props
+  const{action, onToggleView, onSaveData} = props
 
   const [data, setData] = useState({
     title: '',
@@ -22,8 +22,10 @@ const Form = (props) => {
 
   const changeFormHandler = (event) => {
     event.preventDefault()
-    console.log(data)
-    toggleViewHandler(event)
+
+    onSaveData(data)
+    onToggleView(event)
+
     setData({
       title: '',
       amount: '',
@@ -78,7 +80,7 @@ const Form = (props) => {
 
         <button
           className='add-expenses__button'
-          onClick={toggleViewHandler}
+          onClick={onToggleView}
         >
           Cancel
         </button>
