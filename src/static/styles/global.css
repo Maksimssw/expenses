@@ -107,6 +107,11 @@ input::placeholder {
   color: var(--color-gray100);
 }
 
+.label {
+  display: grid;
+  grid-row-gap: 16px;
+}
+
 .container {
   padding-right: var(--container-indent);
   padding-left: var(--container-indent);
@@ -155,19 +160,6 @@ input::placeholder {
   height: 24px;
 }
 
-.footer {
-  padding-top: 24px;
-  padding-bottom: 52px;
-  border-top: 1px solid var(--color-gray100);
-}
-
-.footer__wrapper {
-  justify-content: space-between;
-  padding: 0 24px;
-  color: var(--color-gray200);
-}
-
-.footer__clear {
-  cursor: pointer;
-  color: var(--color-gray200)
+.disabled {
+  display: none !important;
 }

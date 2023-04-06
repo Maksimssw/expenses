@@ -12,20 +12,27 @@
 
 .add-expenses__form {
   display: grid;
-  grid-template-columns: 1fr 84px;
-  padding: 7px 7px 7px 20px;
+  grid-row-gap: 32px;
+  padding: 16px;
   border: 1px solid var(--color-gray100);
   border-radius: var(--border-rd-lg);
 }
 
 .add-expenses__input {
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-gray1000);
   color: var(--color-blue900);
 }
 
 .add-expenses__button {
+  padding: 0 12px;
   min-height: 44px;
   font-weight: 500;
   background: var(--color-blue700);
   border-radius: var(--border-rd-md);
   color: var(--color-white);
+}
+
+.add-expenses__container {
+  grid-column-gap: 16px;
 }

@@ -1,25 +1,29 @@
 import './index.css'
+import Form from "./Form";
+import {useState} from "react";
 
 const AddExpenses = () => {
+  const[action, setAction] = useState(false)
+
+  const toggleViewHandler = (e) => {
+    e.preventDefault()
+    setAction(!action)
+  }
+
   return (
     <section className='add-expenses container'>
       <h1 className='add-expenses__headline'>Expenses</h1>
-      <form
-        className='add-expenses__form'
+      <Form
+        action={action}
+        toggleViewHandler={toggleViewHandler}
+      />
+      <div
+        className={`grid-row justify-content-center ${action ? 'disabled' : ''}`}
       >
-        <input
-          className='add-expenses__input'
-          type='text'
-          placeholder='Add new expenses item'
-        />
-        <button
-          className='add-expenses__button'
-          value='Submit'
-          type="submit"
-        >
-          Add
+        <button className='add-expenses__button' onClick={toggleViewHandler}>
+          Add Expenses
         </button>
-      </form>
+      </div>
     </section>
   )
 }
