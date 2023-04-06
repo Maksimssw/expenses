@@ -3,17 +3,38 @@ import {useState} from "react";
 const Form = (props) => {
   const{action, toggleViewHandler} = props
 
-  const [title, setTitle] = useState('')
-  const [amount, setAmount] = useState('')
-  const [date, setDate] = useState('')
+  const [data, setData] = useState({
+    title: '',
+    amount: '',
+    date: ''
+  })
 
-  const titleChangeHandler = (e) => setTitle(e.target.value)
-  const amountChangeHandler = (e) => setAmount(e.target.value)
-  const dateChangeHandler = (e) => setDate(e.target.value)
+  const changeHandler = (event) => {
+    const name = event.target.name
+
+    setData((state) => {
+      return {
+        ...state,
+        [name]: event.target.value
+      }
+    })
+  }
+
+  const changeFormHandler = (event) => {
+    event.preventDefault()
+    console.log(data)
+    toggleViewHandler(event)
+    setData({
+      title: '',
+      amount: '',
+      date: ''
+    })
+  }
 
   return (
       <form
         className={`add-expenses__form ${action ? '' : 'disabled'}`}
+        onSubmit={changeFormHandler}
       >
       <label className='label'>
         <span>Title</span>
@@ -21,7 +42,9 @@ const Form = (props) => {
           className='add-expenses__input'
           type='text'
           placeholder='add a new expense'
-          onChange={titleChangeHandler}
+          value={data.title}
+          name='title'
+          onChange={changeHandler}
         />
       </label>
 
@@ -29,13 +52,21 @@ const Form = (props) => {
         <span>Amount</span>
         <input
           className='add-expenses__input'
-          type='text'
+          type='number'
           placeholder='amount of money spent'
-          onChange={amountChangeHandler}
+          value={data.amount}
+          name='amount'
+          onChange={changeHandler}
         />
       </label>
 
-      <input type="date" className='add-expenses__input' onChange={dateChangeHandler}/>
+      <input
+        type="date"
+        className='add-expenses__input'
+        value={data.date}
+        name='date'
+        onChange={changeHandler}
+      />
 
       <div className="add-expenses__container grid-row justify-content-start">
         <button
@@ -47,7 +78,6 @@ const Form = (props) => {
 
         <button
           className='add-expenses__button'
-          type="submit"
           onClick={toggleViewHandler}
         >
           Cancel
