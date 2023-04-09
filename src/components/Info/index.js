@@ -4,13 +4,16 @@ import Years from "./Years";
 import {useState} from "react";
 
 const Info = (props) => {
-  const [year, setYear] = useState('')
+  const [year, setYear] = useState('2023')
 
   const addYearHandel = (year) => setYear(year)
 
   return (
     <>
-      <Years onAddYear={addYearHandel} />
+      <Years
+        year={year}
+        onAddYear={addYearHandel}
+      />
       <Schedule />
       <Expenses onExpenses={props.onExpenses} />
     </>
