@@ -1,7 +1,6 @@
 import AddExpenses from "../AddExpenses";
-import Schedule from "../Schedule";
-import Expenses from "../Expenses";
 import {useState} from "react";
+import Info from "../Info";
 
 const App = () => {
 
@@ -16,8 +15,7 @@ const App = () => {
   return (
     <main>
       <AddExpenses onAddExpenses={addExpensesHandler}/>
-      <Schedule />
-      <Expenses />
+      <Info onExpenses={expenses}/>
     </main>
   );
 }
