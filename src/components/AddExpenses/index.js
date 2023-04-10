@@ -13,7 +13,8 @@ const AddExpenses = (props) => {
   const saveDataHandler = (data) => {
     const costData = {
       ...data,
-      id: Math.random().toString()
+      id: Math.random().toString(),
+      year: new Date(data.date).getFullYear().toString()
     }
     props.onAddExpenses(costData)
   }

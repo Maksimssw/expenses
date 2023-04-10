@@ -2,10 +2,11 @@ import close from '../../../static/icons/close.svg'
 import './index.css'
 
 const Expenses = (props) => {
+  const {onExpenses, year} = props
 
-  const expenses = props.onExpenses.map((item) => {
+  const expenses = onExpenses.filter((expense) => expense.year === year).map((expense) => {
     return (
-      <li className='expenses__item' key={item.id}>
+      <li className='expenses__item' key={expense.id}>
         <button className="expenses__close">
           <img
             src={close}
@@ -15,18 +16,18 @@ const Expenses = (props) => {
 
         <div className="expenses__wrapper">
           <div className="expenses__info grid-row justify-content-between">
-            <p className='expenses__text'>{item.title}</p>
-            <p className='expenses__account'>-${item.amount}</p>
+            <p className='expenses__text'>{expense.title}</p>
+            <p className='expenses__account'>-${expense.amount}</p>
           </div>
           <div className="expenses__content grid-row justify-content-between">
-            <p className='expenses__date'>{item.date}</p>
+            <p className='expenses__date'>{expense.date}</p>
             <p className='expenses__spend'>Spend</p>
           </div>
         </div>
       </li>
-
     )
   })
+
 
   return(
     <section className='expenses container'>

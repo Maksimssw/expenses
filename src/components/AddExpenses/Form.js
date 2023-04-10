@@ -22,10 +22,7 @@ const Form = (props) => {
 
   const changeFormHandler = (event) => {
     event.preventDefault()
-
     onSaveData(data)
-    onToggleView(event)
-
     setData({
       title: '',
       amount: '',

@@ -1,10 +1,15 @@
 import './index.css'
 
-const Years = (props) => {
-  const {onAddYear, year} = props
+const Filter = (props) => {
+  const {onAddYear, year, onExpenses} = props
   const getYearHandler = (event) => {
     onAddYear(event.target.value)
   }
+
+  const years = [...new Set (
+    onExpenses.map((expense) => expense.year)
+  )]
+    .map((expense, i) => <option key={i} value={expense}>{expense}</option>)
 
   return (
     <section className='years container grid-row justify-content-between'>
@@ -14,12 +19,10 @@ const Years = (props) => {
         onChange={getYearHandler}
         value={year}
       >
-        <option value='2020'>2022</option>
-        <option value='2021'>2021</option>
-        <option value='2022'>2020</option>
+        {years}
       </select>
     </section>
   )
 }
 
-export default Years
+export default Filter
