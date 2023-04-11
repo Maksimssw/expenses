@@ -1,27 +1,27 @@
 import close from '../../../static/icons/close.svg'
-import './index.css'
+import styles from './index.module.css'
 
 const Expenses = (props) => {
   const {onExpenses, year} = props
 
   const expenses = onExpenses.filter((expense) => expense.year === year).map((expense) => {
     return (
-      <li className='expenses__item' key={expense.id}>
-        <button className="expenses__close">
+      <li className={styles['expenses__item']} key={expense.id}>
+        <button className={styles['expenses__close']}>
           <img
             src={close}
             alt=""
           />
         </button>
 
-        <div className="expenses__wrapper">
-          <div className="expenses__info grid-row justify-content-between">
-            <p className='expenses__text'>{expense.title}</p>
-            <p className='expenses__account'>-${expense.amount}</p>
+        <div className={styles['expenses__wrapper']}>
+          <div className={`${styles['expenses__info']} grid-row justify-content-between`}>
+            <p className={styles['expenses__text']}>{expense.title}</p>
+            <p className={styles['expenses__account']}>-${expense.amount}</p>
           </div>
-          <div className="expenses__content grid-row justify-content-between">
-            <p className='expenses__date'>{expense.date}</p>
-            <p className='expenses__spend'>Spend</p>
+          <div className={`${styles['expenses__content']} grid-row justify-content-between`}>
+            <p className={styles['expenses__date']}>{expense.date}</p>
+            <p className={styles['expenses__spend']}>Spend</p>
           </div>
         </div>
       </li>
@@ -30,8 +30,8 @@ const Expenses = (props) => {
 
 
   return(
-    <section className='expenses container'>
-      <ul className='expenses__list'>
+    <section className={`${styles.expenses} container`}>
+      <ul className={styles['expenses__list']}>
         {expenses}
       </ul>
     </section>

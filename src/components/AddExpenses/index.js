@@ -1,7 +1,6 @@
-import './index.css'
 import Form from "./Form";
 import {useState} from "react";
-
+import styles from './index.module.css'
 const AddExpenses = (props) => {
   const[action, setAction] = useState(false)
 
@@ -20,17 +19,17 @@ const AddExpenses = (props) => {
   }
 
   return (
-    <section className='add-expenses container'>
-      <h1 className='add-expenses__headline'>Expenses</h1>
+    <section className={`container ${styles['add-expenses']}`}>
+      <h1 className={styles['add-expenses__headline']}>Expenses</h1>
       <Form
         action={action}
         onToggleView={toggleViewHandler}
         onSaveData={saveDataHandler}
       />
       <div
-        className={`grid-row justify-content-center ${action ? 'disabled' : ''}`}
+        className={`grid-row justify-content-center ${action && 'disabled'}`}
       >
-        <button className='add-expenses__button' onClick={toggleViewHandler}>
+        <button className={styles['add-expenses__button']} onClick={toggleViewHandler}>
           Add Expenses
         </button>
       </div>

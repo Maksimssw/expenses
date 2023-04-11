@@ -1,4 +1,4 @@
-import './index.css'
+import styles from './index.module.css'
 
 const Filter = (props) => {
   const {onAddYear, year, onExpenses} = props
@@ -12,10 +12,10 @@ const Filter = (props) => {
     .map((expense, i) => <option key={i} value={expense}>{expense}</option>)
 
   return (
-    <section className='years container grid-row justify-content-between'>
-      <label className='years__text'>Choose a year</label>
+    <section className={`${styles.years} container grid-row justify-content-between`}>
+      <label className={styles['years__text']}>Choose a year</label>
       <select
-        className='years__select'
+        className={styles['years__select']}
         onChange={getYearHandler}
         value={year}
       >
