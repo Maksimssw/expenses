@@ -2,12 +2,17 @@ import close from '../../../static/icons/close.svg'
 import styles from './index.module.css'
 
 const Expenses = (props) => {
-  const {onExpenses, year} = props
+  const {onExpenses, year, onRemove} = props
+
+  const removeExpensesHandler = (id) => onRemove(id)
 
   const expenses = onExpenses.filter((expense) => expense.year === year).map((expense) => {
     return (
       <li className={styles['expenses__item']} key={expense.id}>
-        <button className={styles['expenses__close']}>
+        <button
+          className={styles['expenses__close']}
+          onClick={() => removeExpensesHandler(expense.id)}
+        >
           <img
             src={close}
             alt=""

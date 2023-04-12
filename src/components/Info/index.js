@@ -4,7 +4,8 @@ import Filter from "./Filter";
 import {useState} from "react";
 
 const Info = (props) => {
-  const [year, setYear] = useState('2023')
+  const {onExpenses, onRemove} = props
+  const [year, setYear] = useState(new Date().getFullYear().toString())
 
   const addYearHandel = (year) => setYear(year)
 
@@ -12,13 +13,14 @@ const Info = (props) => {
     <>
       <Filter
         year={year}
+        onExpenses={onExpenses}
         onAddYear={addYearHandel}
-        onExpenses={props.onExpenses}
       />
       <Schedule />
       <Expenses
-        onExpenses={props.onExpenses}
         year={year}
+        onExpenses={onExpenses}
+        onRemove={onRemove}
       />
     </>
   )

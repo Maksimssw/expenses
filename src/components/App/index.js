@@ -12,10 +12,17 @@ const App = () => {
     })
   }
 
+  const removeExpenseHandler = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id))
+  }
+
   return (
     <main>
       <AddExpenses onAddExpenses={addExpensesHandler}/>
-      <Info onExpenses={expenses}/>
+      <Info
+        onExpenses={expenses}
+        onRemove={removeExpenseHandler}
+      />
     </main>
   );
 }
