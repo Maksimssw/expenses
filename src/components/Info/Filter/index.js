@@ -1,5 +1,6 @@
+import {useEffect, useRef} from 'react';
+
 import styles from './index.module.css'
-import {useEffect, useRef, useState} from "react";
 
 const Filter = (props) => {
   const {onAddYear, year, onExpenses} = props

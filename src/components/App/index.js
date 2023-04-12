@@ -1,11 +1,11 @@
-import AddExpenses from "../AddExpenses";
-import {useState} from "react";
-import Info from "../Info";
+import {useState} from 'react';
+
+import AddExpenses from '../AddExpenses';
+import Info from '../Info';
 
 const App = () => {
-
   const [expenses, setExpenses] = useState([])
-
+  
   const addExpensesHandler = (data) => {
     setExpenses((state) => {
       return [...state, data]

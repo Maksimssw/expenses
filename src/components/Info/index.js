@@ -1,7 +1,9 @@
-import Expenses from "./Expenses";
-import Schedule from "./Schedule";
-import Filter from "./Filter";
-import {useState} from "react";
+import {useState} from 'react';
+
+import Expenses from './Expenses';
+import Schedule from './Schedule';
+import Filter from './Filter';
+
 
 const Info = (props) => {
   const {onExpenses, onRemove} = props

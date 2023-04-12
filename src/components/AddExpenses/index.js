@@ -1,6 +1,9 @@
-import Form from "./Form";
-import {useState} from "react";
+import {useState} from 'react';
+
+import Form from './Form';
+
 import styles from './index.module.css'
+
 const AddExpenses = (props) => {
   const[action, setAction] = useState(false)
 
@@ -13,7 +16,7 @@ const AddExpenses = (props) => {
     const costData = {
       ...data,
       id: Math.random().toString(),
-      year: new Date(data.date).getFullYear().toString()
+      year: new Date(data.date).getFullYear().toString(),
     }
     props.onAddExpenses(costData)
   }

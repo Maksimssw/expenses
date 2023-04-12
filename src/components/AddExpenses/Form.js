@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useState} from 'react';
+
 import styles from './index.module.css'
 
 const Form = (props) => {
@@ -7,7 +8,7 @@ const Form = (props) => {
   const [data, setData] = useState({
     title: '',
     amount: '',
-    date: ''
+    date: '',
   })
   const [errorText, setErrorText] = useState(false)
 
@@ -18,7 +19,7 @@ const Form = (props) => {
     setData((state) => {
       return {
         ...state,
-        [name]: event.target.value
+        [name]: event.target.value,
       }
     })
   }
@@ -37,40 +38,40 @@ const Form = (props) => {
     setData({
       title: '',
       amount: '',
-      date: ''
+      date: '',
     })
   }
 
   return (
-      <form
-        className={`${styles['add-expenses__form']} ${!action && 'disabled'}`}
-        onSubmit={changeFormHandler}
-      >
+    <form
+      className={`${styles['add-expenses__form']} ${!action && 'disabled'}`}
+      onSubmit={changeFormHandler}
+    >
       <h2
         className={`${styles['add-expenses__error']} ${!errorText && 'disabled'}`}
       >
         Fill in all the fields!
       </h2>
-      <label className='label'>
+      <label className="label">
         <span>Title</span>
         <input
           className={styles['add-expenses__input']}
-          type='text'
-          placeholder='add a new expense'
+          type="text"
+          placeholder="add a new expense"
           value={data.title}
-          name='title'
+          name="title"
           onChange={changeHandler}
         />
       </label>
 
-      <label className='label'>
+      <label className="label">
         <span>Amount</span>
         <input
           className={styles['add-expenses__input']}
-          type='number'
-          placeholder='amount of money spent'
+          type="number"
+          placeholder="amount of money spent"
           value={data.amount}
-          name='amount'
+          name="amount"
           onChange={changeHandler}
         />
       </label>
@@ -79,7 +80,7 @@ const Form = (props) => {
         type="date"
         className={styles['add-expenses__input']}
         value={data.date}
-        name='date'
+        name="date"
         onChange={changeHandler}
       />
 
